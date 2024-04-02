@@ -1,9 +1,14 @@
 import streamlit as st
 import speech_recognition as sr
 import pyttsx3
+import os  # Import os module to set environment variable
 
 # Initialize recognizer class (for recognizing speech)
 recognizer = sr.Recognizer()
+
+# Set the path to libespeak.so.1 (replace with the actual path on your system)
+# Specify the ESPEAK_PATH environment variable before initializing pyttsx3 engine
+os.environ['ESPEAK_PATH'] = '/path/to/speech2text'
 
 # Initialize pyttsx3 engine for speech output
 engine = pyttsx3.init()
